@@ -48,8 +48,7 @@ public class TelegeramBot extends TelegramLongPollingBot {
     private void sendHelpMessage(long chatId) {
         String responseText = "Вот список доступных команд:\n" +
                 "/start - Начать общение с ботом\n" +
-                "/help - Получить список команд\n" +
-                "[other commands here]";
+                "/help - Получить список команд";
         sendMessage(chatId, responseText);
     }
 
