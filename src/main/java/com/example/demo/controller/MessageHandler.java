@@ -16,7 +16,6 @@ public class MessageHandler {
     public String handleUpdate(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
-            long chatId = update.getMessage().getChatId();
 
             if (messageText.equals("/start")) {
                 Chat chat = update.getMessage().getChat();
