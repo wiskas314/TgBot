@@ -13,12 +13,21 @@ public class TelegramBot extends TelegramLongPollingBot {
     private final MessageHandler messageHandler;
     private final BotConfig botConfig;
 
+    /**
+     * конструктор класса
+     * @param messageHandler обработчик бизнес-логики сообщений
+     * @param botConfig конфигурация бота, содержащая токен и имя
+     */
     public TelegramBot(MessageHandler messageHandler, BotConfig botConfig) {
         super(botConfig.getToken());
         this.messageHandler = messageHandler;
         this.botConfig = botConfig;
     }
 
+    /**
+     *обрабатывает входящее обновление от Telegram
+     *метод вызывается автоматически при получении нового сообщения от пользователя
+     */
     @Override
     public void onUpdateReceived(Update update) {
         String responseText = messageHandler.handleUpdate(update);
@@ -34,12 +43,19 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-
+    /**
+     *
+     * Возвращает имя бота
+     */
     @Override
     public String getBotUsername() {
         return botConfig.getBotName();
     }
 
+    /**
+     *
+     * Возвращает токен бота
+     */
     @Override
     public String getBotToken() {
         return botConfig.getToken();

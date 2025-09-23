@@ -1,6 +1,6 @@
 package com.example.demo.config;
 
-import com.example.demo.controller.TelegeramBot;
+import com.example.demo.controller.TelegramBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -12,10 +12,10 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 @Component
 public class BotInitializer {
 
-    private final TelegeramBot telegramBot;
+    private final TelegramBot telegramBot;
 
     @Autowired
-    public BotInitializer(TelegeramBot telegramBot) {
+    public BotInitializer(TelegramBot telegramBot) {
         this.telegramBot = telegramBot;
     }
 
