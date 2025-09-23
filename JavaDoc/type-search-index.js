@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.example.demo.config","l":"BotConfig"},{"p":"com.example.demo.config","l":"BotInitializer"},{"p":"com.example.demo.controller","l":"MessageHandler"},{"p":"com.example.demo.controller","l":"TelegramBot"},{"p":"com.example.demo","l":"TgbotApplication"}];updateSearchResults();
