@@ -25,7 +25,7 @@ public class MessageHandler {
             } else if (messageText.equals("/help")) {
                 return sendHelpMessage();
             } else {
-                return sendMessage(messageText);
+                return echoMessage(messageText);
             }
         } else {
             return "Ошибка обработки входных данных, проверьте что вы ввели текст!";
@@ -45,16 +45,17 @@ public class MessageHandler {
      * содержит список всех доступных команд с их описанием
      */
     private String sendHelpMessage() {
-        return "Вот список доступных команд:\n" +
-                "/start - Начать общение с ботом\n" +
-                "/help - Получить список команд";
+        return """
+        Вот список доступных команд:
+        /start - Начать общение с ботом
+        /help - Получить список команд""";
     }
 
     /**
      *обрабатывает обычные текстовые сообщения (не команды)
      * возвращает эхо-ответ с текстом полученного сообщения
      */
-    private String sendMessage(String messageText) {
+    private String echoMessage(String messageText) {
         return "Вы написали: " + messageText;
     }
 }
