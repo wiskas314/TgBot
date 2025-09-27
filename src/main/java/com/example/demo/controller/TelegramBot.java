@@ -7,7 +7,10 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-
+/**
+ * Основной класс Telegram бота , обеспечивает обработку входящих сообщений
+ * и отправку ответов пользователям
+ */
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
     private final MessageHandler messageHandler;
@@ -24,10 +27,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         this.botConfig = botConfig;
     }
 
-    /**
-     *обрабатывает входящее обновление от Telegram
-     *метод вызывается автоматически при получении нового сообщения от пользователя
-     */
+
     @Override
     public void onUpdateReceived(Update update) {
         String responseText = messageHandler.handleUpdate(update);
@@ -43,19 +43,11 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    /**
-     *
-     * Возвращает имя бота
-     */
     @Override
     public String getBotUsername() {
         return botConfig.getBotName();
     }
 
-    /**
-     *
-     * Возвращает токен бота
-     */
     @Override
     public String getBotToken() {
         return botConfig.getToken();
