@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageHandler {
     /**
-     * обрабатывает входящее обновление от Telegram  и возвращает текстовый ответ
+     * обрабатывает текст входящего сообщения и возвращает текстовый ответ.
      */
     public String handleUpdate(String message, String userName) {
         if (!message.equals("")) {
@@ -25,15 +25,21 @@ public class MessageHandler {
         }
     }
 
-
+    /**
+     * Сообщение, которое отправится при ошибке обработки исходного сообщения
+     */
     private String ErrMessage() {
         return "Ошибка обработки входных данных, проверьте что вы ввели текст!";
     }
-
+    /**
+     * Генерируется эхо-сообщение пользователю
+     */
     private String echoMessage(String messageText) {
         return "Вы написали: " + messageText;
     }
-
+    /**
+     * Сообщение которое генерируется при начале диалога либо после команды /start
+     */
     private String startMessage(String userName) {
         return "Привет, " + userName + "! Я бот, готовый помогать.\nЧтобы узнать, что я умею, введи /help";
     }

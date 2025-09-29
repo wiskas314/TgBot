@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+/**
+ * Тест обработки классом текста сообщения, отправленного пользователем
+ */
 class MessageHandlerTest {
 
     @Test
