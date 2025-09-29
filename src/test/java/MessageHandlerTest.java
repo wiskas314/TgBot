@@ -3,12 +3,12 @@
 import com.example.demo.controller.MessageHandler;
 
 import org.junit.jupiter.api.Test;
-import org.telegram.telegrambots.meta.api.objects.Message;
-import org.telegram.telegrambots.meta.api.objects.Update;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+/**
+ * Тест обработки классом текста сообщения, отправленного пользователем
+ */
 class MessageHandlerTest {
 
     @Test
@@ -16,12 +16,10 @@ class MessageHandlerTest {
 
         MessageHandler messageHandler = new MessageHandler();
 
-        Update update = new Update();
-        Message message = new Message();
-        message.setText("ТЕСТ");
-        update.setMessage(message);
+        String message = "TEST";
+        String username = "Bob";
 
-        String result = messageHandler.handleUpdate(update);
+        String result = messageHandler.handleUpdate(message, username);
 
-        assertEquals("Вы написали: ТЕСТ", result);
+        assertEquals("Вы написали: TEST", result);
 }}
